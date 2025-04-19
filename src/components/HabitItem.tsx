@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { CheckCircle, Circle } from 'lucide-react';
-import { Habit } from '@/types/habit';
+import { Habit, ToastVariant } from '@/types/habit';
 import { cn } from '@/lib/utils';
 import { useAppMode } from '@/contexts/AppModeContext';
 import { toast } from '@/hooks/use-toast';
@@ -19,12 +18,13 @@ const HabitItem: React.FC<HabitItemProps> = ({ habit, onToggleStatus }) => {
     onToggleStatus(habit.id);
     
     if (habit.status === 'incomplete') {
+      const variant: ToastVariant = 'success';
       toast({
         title: "Habit completed!",
         description: mode === 'action' 
           ? "You're killing it! Keep the momentum going." 
           : "Wonderful progress! Keep nurturing your growth.",
-        variant: "success",
+        variant: variant,
       });
     }
   };

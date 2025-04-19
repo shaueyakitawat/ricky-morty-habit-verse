@@ -1,6 +1,7 @@
 
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { toast } from '@/hooks/use-toast';
+import { ToastVariant } from '@/types/habit';
 
 type AppMode = 'action' | 'growth';
 
@@ -20,12 +21,14 @@ export function AppModeProvider({ children }: { children: ReactNode }) {
     const newMode = mode === 'action' ? 'growth' : 'action';
     setMode(newMode);
     
+    const variant: ToastVariant = newMode === 'action' ? 'default' : 'success';
+    
     toast({
       title: newMode === 'action' ? 'Action Mode Activated!' : 'Growth Mode Activated',
       description: newMode === 'action' 
         ? "Time to get schwifty! Let's crush those habits." 
         : "Oh geez! Let's focus on personal development.",
-      variant: newMode === 'action' ? 'default' : 'success',
+      variant: variant,
     });
   };
 

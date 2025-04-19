@@ -28,3 +28,5 @@ export interface UserStats {
   awardsUnlocked: number;
   totalAwards: number;
 }
+
+export type ToastVariant = 'default' | 'destructive' | 'success';

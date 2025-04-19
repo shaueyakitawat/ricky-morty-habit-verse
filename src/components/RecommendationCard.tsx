@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Habit } from '@/types/habit';
+import { Habit, ToastVariant } from '@/types/habit';
 import { cn } from '@/lib/utils';
 import { useAppMode } from '@/contexts/AppModeContext';
 import { PlusCircle, Lightbulb } from 'lucide-react';
@@ -17,10 +16,11 @@ const RecommendationCard: React.FC<RecommendationCardProps> = ({ habit, onAdd })
   
   const handleAdd = () => {
     onAdd(habit);
+    const variant: ToastVariant = 'success';
     toast({
       title: "Habit added!",
       description: "New habit added to your dashboard.",
-      variant: "success",
+      variant: variant,
     });
   };
   
