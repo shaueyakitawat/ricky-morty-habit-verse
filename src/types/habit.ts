@@ -1,4 +1,5 @@
 
+
 export type HabitStatus = 'complete' | 'incomplete';
 
 export interface Habit {
@@ -29,4 +30,5 @@ export interface UserStats {
   totalAwards: number;
 }
 
-export type ToastVariant = 'default' | 'destructive' | 'success';
+export type ToastVariant = 'default' | 'destructive' | 'success' | 'action' | 'growth';
+

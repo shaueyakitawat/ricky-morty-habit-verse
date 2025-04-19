@@ -73,7 +73,7 @@
   }
 
   body {
-    @apply bg-space text-foreground antialiased overflow-x-hidden;
+    @apply bg-voidblack text-foreground antialiased overflow-x-hidden;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
 
@@ -88,15 +88,15 @@
   }
   
   .rick-card {
-    @apply rounded-xl relative bg-spacedark/60 backdrop-blur-md border border-rickblue/20 p-4 transition-all hover:border-rickblue/50;
+    @apply rounded-xl relative bg-spacedark/60 backdrop-blur-md border border-portalcyan/20 p-4 transition-all hover:border-portalcyan/50;
   }
 
   .morty-card {
-    @apply rounded-xl relative bg-spacedark/60 backdrop-blur-md border border-portalgreen/20 p-4 transition-all hover:border-portalgreen/50;
+    @apply rounded-xl relative bg-spacedark/60 backdrop-blur-md border border-chillteal/20 p-4 transition-all hover:border-chillteal/50;
   }
 
   .glowing-button {
-    @apply relative overflow-hidden bg-gradient-to-r from-rickblue to-rickdarkblue text-white py-3 px-6 rounded-lg font-medium transition-all hover:from-rickblue/90 hover:to-rickdarkblue/90 
+    @apply relative overflow-hidden bg-gradient-to-r from-portalcyan to-plasmapink text-white py-3 px-6 rounded-lg font-medium transition-all hover:from-portalcyan/90 hover:to-plasmapink/90 
     before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700;
   }
   
@@ -105,7 +105,7 @@
   }
   
   .habit-item-incomplete {
-    @apply border-l-gray-600 hover:border-l-rickblue;
+    @apply border-l-gray-600 hover:border-l-portalcyan;
   }
   
   .habit-item-complete {
@@ -117,10 +117,63 @@
   }
 
   .action-mode {
-    @apply text-rickblue;
+    @apply text-portalcyan;
   }
   
   .growth-mode {
-    @apply text-portalgreen;
+    @apply text-chillteal;
+  }
+  
+  .action-mode-card {
+    @apply rounded-none border border-plasmapink/50 shadow-[0_0_10px_rgba(255,42,109,0.3)];
+  }
+  
+  .growth-mode-card {
+    @apply rounded-2xl border border-chillteal/50 shadow-[0_0_10px_rgba(91,192,190,0.3)];
   }
 }
+
+/* Animation for firefly effect */
+@keyframes firefly {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-15px) translateX(5px) scale(0.8);
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-25px) translateX(10px) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Animation for glitch effect */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+

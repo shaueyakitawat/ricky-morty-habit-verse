@@ -70,6 +70,12 @@ export default {
 				portaldarker: '#44281D',
 				space: '#0D0D0D',
 				spacedark: '#121212',
+				// New Rick and Morty UI colors
+				voidblack: '#0A0A12',
+				portalcyan: '#00F5FF',
+				plasmapink: '#FF2A6D',
+				chillteal: '#5BC0BE',
+				chilllavender: '#AE8FE3',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -111,6 +117,18 @@ export default {
 						opacity: '0.7',
 						boxShadow: '0 0 20px 8px rgba(36, 193, 224, 0.9)'
 					}
+				},
+				'glitch': {
+					'0%, 100%': { transform: 'translate(0)' },
+					'20%': { transform: 'translate(-2px, 2px)' },
+					'40%': { transform: 'translate(-2px, -2px)' },
+					'60%': { transform: 'translate(2px, 2px)' },
+					'80%': { transform: 'translate(2px, -2px)' }
+				},
+				'firefly': {
+					'0%': { transform: 'translate(0) scale(1)', opacity: '0' },
+					'50%': { opacity: '1' },
+					'100%': { transform: 'translate(10px, -10px) scale(0)', opacity: '0' }
 				}
 			},
 			animation: {
@@ -118,13 +136,17 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'portal-spin': 'portal-spin 8s linear infinite',
 				'float': 'float 6s ease-in-out infinite',
-				'pulse-glow': 'pulse-glow 3s ease-in-out infinite'
+				'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+				'glitch': 'glitch 0.3s ease-in-out infinite',
+				'firefly': 'firefly 2s ease-in-out infinite'
 			},
 			backgroundImage: {
 				'portal-gradient': 'radial-gradient(circle, rgba(151, 206, 76, 0.8) 0%, rgba(36, 193, 224, 0.5) 100%)',
 				'space-gradient': 'linear-gradient(to bottom, rgba(13, 13, 13, 1), rgba(18, 18, 18, 0.95))',
 				'action-gradient': 'linear-gradient(135deg, #24C1E0 0%, #3A7CA5 100%)',
-				'growth-gradient': 'linear-gradient(135deg, #97CE4C 20%, #44281D 100%)'
+				'growth-gradient': 'linear-gradient(135deg, #97CE4C 20%, #44281D 100%)',
+				'rick-gradient': 'linear-gradient(135deg, #00F5FF 0%, #FF2A6D 100%)',
+				'morty-gradient': 'linear-gradient(135deg, #5BC0BE 0%, #AE8FE3 100%)'
 			}
 		}
 	},

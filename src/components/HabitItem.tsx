@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { CheckCircle, Circle } from 'lucide-react';
 import { Habit, ToastVariant } from '@/types/habit';
@@ -18,7 +19,8 @@ const HabitItem: React.FC<HabitItemProps> = ({ habit, onToggleStatus }) => {
     onToggleStatus(habit.id);
     
     if (habit.status === 'incomplete') {
-      const variant: ToastVariant = 'success';
+      const variant: ToastVariant = mode === 'action' ? 'action' : 'growth';
+      
       toast({
         title: "Habit completed!",
         description: mode === 'action' 

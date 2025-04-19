@@ -11,17 +11,22 @@ const ModeToggle: React.FC = () => {
     <button 
       onClick={toggleMode}
       className={cn(
-        "fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full flex items-center justify-center shadow-xl transition-all duration-300",
+        "fixed bottom-6 right-6 z-50 h-16 w-16 rounded-full flex items-center justify-center shadow-xl transition-all duration-500",
         mode === 'action' 
-          ? 'bg-rickblue text-white animate-pulse-glow' 
-          : 'bg-portalgreen text-white'
+          ? 'bg-gradient-to-tr from-portalcyan to-plasmapink text-white animate-pulse-glow border-2 border-portalcyan/50' 
+          : 'bg-gradient-to-tr from-chillteal to-chilllavender text-white border-2 border-chillteal/50'
       )}
       aria-label="Toggle app mode"
     >
+      <div className={cn(
+        "absolute inset-0 rounded-full opacity-20",
+        mode === 'action' ? 'animate-glitch' : 'animate-float'
+      )}></div>
+      
       {mode === 'action' ? (
-        <Zap className="h-6 w-6" />
+        <Zap className="h-7 w-7" />
       ) : (
-        <Moon className="h-6 w-6" />
+        <Moon className="h-7 w-7" />
       )}
     </button>
   );

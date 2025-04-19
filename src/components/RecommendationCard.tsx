@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Habit, ToastVariant } from '@/types/habit';
 import { cn } from '@/lib/utils';
@@ -16,7 +17,8 @@ const RecommendationCard: React.FC<RecommendationCardProps> = ({ habit, onAdd })
   
   const handleAdd = () => {
     onAdd(habit);
-    const variant: ToastVariant = 'success';
+    const variant: ToastVariant = mode === 'action' ? 'action' : 'growth';
+    
     toast({
       title: "Habit added!",
       description: "New habit added to your dashboard.",

@@ -21,7 +21,7 @@ export function AppModeProvider({ children }: { children: ReactNode }) {
     const newMode = mode === 'action' ? 'growth' : 'action';
     setMode(newMode);
     
-    const variant: ToastVariant = newMode === 'action' ? 'default' : 'success';
+    const variant: ToastVariant = newMode === 'action' ? 'action' : 'growth';
     
     toast({
       title: newMode === 'action' ? 'Action Mode Activated!' : 'Growth Mode Activated',
